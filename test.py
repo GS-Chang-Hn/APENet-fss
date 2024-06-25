@@ -87,8 +87,6 @@ def main(_run, _config, _log):
                 to_tensor=ToTensorNormalize(),
                 labels=labels,
                 max_iters=_config['n_steps'] * _config['batch_size'],
-                # 每运行一次step，更新一次参数权重，即进行一次学习。每一次更新参数需要batch size个样本进行运算学习，根据运算结果调整更新一次参数
-                # 训练和测试是要在同样条件下进行的，提出在训练的时候不断地让网络只看每一类的少量样本，这将和测试的过程是一致的
                 n_ways=_config['task']['n_ways'],
                 n_shots=_config['task']['n_shots'],
                 n_queries=_config['task']['n_queries']
@@ -152,7 +150,7 @@ def main(_run, _config, _log):
                 # utils.generalized_imshow(pred_1_447.cpu(), query_images_id[0] + "_argmax_pred")
 
                 '''
-                 @GL  合并预测和原图 
+                 @  合并预测和原图 
                  参数1： query images id
                  参数2： argmax拿到的 预测结果 1 447 447
                 '''
