@@ -5,12 +5,10 @@ Few-shot semantic segmentation (FSS) is a challenging computer vision task that 
 ## Environment setup
 ```
 Python 3.7 +
-PyTorch 1.0.1
-torchvision 0.2.1
-NumPy, SciPy, PIL
-pycocotools
-sacred 0.7.5
-tqdm 4.32.2
+torch 1.7.0
+torchvision 0.8.0
+scipy 1.7.3
+tqdm 4.64.0
 ```
 # Please download the following datasets: 
 ```
