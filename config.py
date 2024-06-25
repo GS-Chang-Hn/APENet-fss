@@ -31,7 +31,7 @@ def cfg():
 
     if mode == 'train':
         dataset = 'VOC'  # 'VOC' or 'COCO'
-        n_steps = 50000
+        n_steps = 80000
         label_sets = 0
         batch_size = 1
         lr_milestones = [10000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000, 75000, 80000, 90000]
@@ -58,9 +58,9 @@ def cfg():
 
     elif mode == 'test':
         notrain = False
-        snapshot = './results/Cross-attention-fss_VOC_align_sets_0_1way_1shot_[train]/1/snapshots/50000.pth'
+        snapshot = './results/Cross-attention-fss_VOC_align_sets_0_1way_1shot_[train]/1/snapshots/80000.pth'
         n_runs = 4
-        n_steps = 100
+        n_steps = 2000
         batch_size = 1
         scribble_dilation = 0
         bbox = False
@@ -85,7 +85,6 @@ def cfg():
         # Set task config from the snapshot string
         task = {
             'n_ways': int(re.search("[0-9]+way", snapshot).group(0)[:-3]),
-            # 'n_ways': 2,
             'n_shots': int(re.search("[0-9]+shot", snapshot).group(0)[:-4]),
             'n_queries': 1,
         }
